@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block body %}
+    <nav>
+        <a href="{{ url_for('users_bp.home') }}">Home</a>
+        <a href="{{ url_for('users_bp.my_cart') }}">My Cart</a>
+        <a href="{{ url_for('users_bp.logout') }}">Logout</a>
+    </nav>
+
+    <h2>Products</h2>
+    <ul class="product-list">
+        {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }} - {{ product.amount }}</li>
+            <form action="{{ url_for('users_bp.add_to_cart_page', product_id=product.id) }}" method="POST">
+                <button type="submit">Add to cart</button>
+            </form>
+        {% endfor %}
+    </ul>
+{% endblock %}
