@@ -79,7 +79,7 @@ uv run run.py
 * Add Google authentication
 * Support product images
 * Product search and filtering
-* Deployment (Docker / Cloud)
+* Deployment (Docker / Kubernetes)
 
 ---
 
